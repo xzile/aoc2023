@@ -2,9 +2,9 @@ module aoc-in-go
 
 go 1.21.3
 
-require github.com/jpillora/puzzler v1.2.4
+require github.com/jpillora/puzzler v1.3.3
 
-require golang.org/x/exp v0.0.0-20220303212507-bbda1eaf7a17 // indirect
+require golang.org/x/exp v0.0.0-20231206192017-f3f8817b8deb
 
 require (
 	github.com/JohannesKaufmann/html-to-markdown v1.4.2 // indirect

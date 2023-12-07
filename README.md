@@ -14,12 +14,17 @@ Advent of Code (https://adventofcode.com) is a yearly series of programming ques
 * With env variable `AOC_SESSION` set:
    * Auto-download part 2 of questions into `<year>/<day>/README.md`
    * Auto-download user input into `<year>/<day>/input-user.md`
+   * Only runs part 2 once part 1 is completed 
 * When you save `code.go`, it will execute your `run` function 4 times:
    * Input `input-example.txt` and `part2=false`
-   * Input `input-example.txt` and `part2=true`
+   * Input `input-example(2).txt` and `part2=true`
    * Input `input-user.txt` and `part2=false`
-   * Input `input-user.txt` and `part2=true`
-   * and, will show the results and timing of each
+   * Input `input-user(2).txt` and `part2=true`
+   * Each run will display the return value and timing.
+   * Part 2 will use the `<file>2.txt` if it exists.
+* Control execution with `PART= INPUT= ./run.sh <year> <day>`, where
+   * `PART` can be `1` or `2`, and
+   * `INPUT` can be `example` or `user`
 
 ---
 
@@ -37,8 +42,8 @@ Advent of Code (https://adventofcode.com) is a yearly series of programming ques
 
    ```sh
    $ ./run.sh 2023 1
-   [run.sh] created ./2023/01
-   [run.sh] created ./2023/01/code.go
+   Created directory ./2023/01
+   Created file code.go
    Created file README.md
    Created file input-example.txt
    run(part1, input-example) returned in 616µs => 42
@@ -65,7 +70,7 @@ Advent of Code (https://adventofcode.com) is a yearly series of programming ques
 
 #### Session
 
-**Optionally**, you can set `export AOC_SESSION=<session>` to your adventofcode.com `session` cookie. That is:
+**Optionally**, you can `export AOC_SESSION=<session>` from your adventofcode.com `session` cookie. That is:
 
 * Login with your browser
 * Open developer tools > Application/Storage > Cookies
