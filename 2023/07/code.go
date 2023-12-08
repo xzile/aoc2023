@@ -1,11 +1,10 @@
 package main
 
 import (
-	"fmt"
+	"aoc-in-go/ez"
 	"github.com/jpillora/puzzler/harness/aoc"
 	"golang.org/x/exp/maps"
 	"slices"
-	"strconv"
 	"strings"
 )
 
@@ -31,7 +30,7 @@ func run(part2 bool, input string) any {
 
 		games = append(games, Game{
 			Cards: parts[0],
-			Bid:   Atoi(parts[1]),
+			Bid:   ez.Atoi(parts[1]),
 		})
 	}
 
@@ -172,15 +171,4 @@ func (g Game) Type(part2 bool) int {
 	default: // High card
 		return 1
 	}
-}
-
-// Atoi ignores the errors in strconv.Atoi and returns the response
-func Atoi(in string) int {
-	out, _ := strconv.Atoi(in)
-	return out
-}
-
-// Log is a simple wrapper around Println + Sprintf
-func Log(format string, a ...any) {
-	fmt.Println(fmt.Sprintf(format, a...))
 }

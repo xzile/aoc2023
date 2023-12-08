@@ -1,8 +1,8 @@
 package main
 
 import (
+	"aoc-in-go/ez"
 	"bufio"
-	"strconv"
 	"strings"
 
 	"github.com/jpillora/puzzler/harness/aoc"
@@ -45,7 +45,7 @@ func run(part2 bool, input string) any {
 			for _, pull := range pulls {
 				for _, part := range strings.Split(pull, ",") {
 					pullParts := strings.Split(strings.TrimSpace(part), " ")
-					numPulled, _ := strconv.Atoi(pullParts[0])
+					numPulled := ez.Atoi(pullParts[0])
 					colorPulled := pullParts[1]
 
 					// Only set the got if the numPulled is greater than the existing got
@@ -81,7 +81,7 @@ func run(part2 bool, input string) any {
 		gameParts := strings.SplitN(newLine, ":", 2)
 		gameRef, gamePulls := gameParts[0], gameParts[1]
 		// Get the game ID as an integer
-		gameID, _ := strconv.Atoi(strings.Split(gameRef, " ")[1])
+		gameID := ez.Atoi(strings.Split(gameRef, " ")[1])
 		gamePass := true
 
 		// Split each game's pulls into invidiual pulls
@@ -95,7 +95,7 @@ func run(part2 bool, input string) any {
 			for _, part := range strings.Split(pull, ",") {
 				// part example: 3 blue
 				pullParts := strings.Split(strings.TrimSpace(part), " ")
-				numPulled, _ := strconv.Atoi(pullParts[0])
+				numPulled := ez.Atoi(pullParts[0])
 				colorPulled := pullParts[1]
 
 				got[colorPulled] += numPulled

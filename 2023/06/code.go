@@ -1,10 +1,9 @@
 package main
 
 import (
-	"fmt"
+	"aoc-in-go/ez"
 	"github.com/jpillora/puzzler/harness/aoc"
 	"regexp"
-	"strconv"
 	"strings"
 )
 
@@ -33,8 +32,8 @@ func run(part2 bool, input string) any {
 	out := 1
 	for raceNo, timeStr := range times {
 		beats := 0
-		time := Atoi(timeStr)
-		dist := Atoi(dists[raceNo])
+		time := ez.Atoi(timeStr)
+		dist := ez.Atoi(dists[raceNo])
 
 		// holdTime is how the button is held, but is also the "speed" of the boat
 		for holdTime := 1; holdTime <= time; holdTime++ {
@@ -49,15 +48,4 @@ func run(part2 bool, input string) any {
 	}
 
 	return out
-}
-
-// Atoi ignores the errors in strconv.Atoi and returns the response
-func Atoi(in string) int {
-	out, _ := strconv.Atoi(in)
-	return out
-}
-
-// Log is a simple wrapper around Println + Sprintf
-func Log(format string, a ...any) {
-	fmt.Println(fmt.Sprintf(format, a...))
 }

@@ -1,10 +1,10 @@
 package main
 
 import (
+	"aoc-in-go/ez"
 	"bufio"
 	"regexp"
 	"slices"
-	"strconv"
 	"strings"
 
 	"github.com/jpillora/puzzler/harness/aoc"
@@ -69,7 +69,7 @@ func run(part2 bool, input string) any {
 						if _, rowExists := symMap[i]; rowExists {
 							if _, colExists := symMap[i][j]; colExists {
 								// Append the number to the symbol it's adjacent to
-								num, _ := strconv.Atoi(newLine[numMatches[0]:numMatches[1]])
+								num := ez.Atoi(newLine[numMatches[0]:numMatches[1]])
 								symMap[i][j] = append(symMap[i][j], num)
 							}
 						}
@@ -141,7 +141,7 @@ func run(part2 bool, input string) any {
 
 			// The number has an adjacent symbol; convert the digits to an int and add to the sum
 			if numPasses {
-				num, _ := strconv.Atoi(newLine[numMatches[0]:numMatches[1]])
+				num := ez.Atoi(newLine[numMatches[0]:numMatches[1]])
 				sum += num
 			}
 		}

@@ -1,11 +1,11 @@
 package main
 
 import (
+	"aoc-in-go/ez"
 	"bufio"
 	"fmt"
 	"github.com/jpillora/puzzler/harness/aoc"
 	"regexp"
-	"strconv"
 	"strings"
 )
 
@@ -56,7 +56,7 @@ func run(part2 bool, input string) any {
 
 		firstNum := onlyNums[0:1]
 		lastNum := onlyNums[len(onlyNums)-1:]
-		newNum, _ := strconv.Atoi(fmt.Sprintf("%s%s", firstNum, lastNum))
+		newNum := ez.Atoi(fmt.Sprintf("%s%s", firstNum, lastNum))
 		//fmt.Println(fmt.Sprintf("line: %s; newLine: %s; onlyNums: %s; newNum: %d", line, newLine, onlyNums, newNum))
 
 		sum += newNum

@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"strconv"
 	"strings"
 
@@ -126,9 +125,4 @@ func Next(in int64, boundaries []Boundary) (int64, int64) {
 func Atoi(in string) int64 {
 	out, _ := strconv.Atoi(in)
 	return int64(out)
-}
-
-// Log is a simple wrapper around Println + Sprintf
-func Log(format string, a ...any) {
-	fmt.Println(fmt.Sprintf(format, a...))
 }
