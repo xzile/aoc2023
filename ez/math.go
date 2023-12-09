@@ -1,5 +1,13 @@
 package ez
 
+func Sum[S ~[]E, E ~int | ~int8 | ~int16 | ~int32 | ~int64 | ~uint | ~uint8 | ~uint16 | ~uint32 | ~uint64 | ~float32 | ~float64](s S) E {
+	var e E
+	for _, v := range s {
+		e += v
+	}
+	return e
+}
+
 // GCD & LCM copied from https://siongui.github.io/2017/06/03/go-find-lcm-by-gcd/
 
 // GCD greatest common divisor via Euclidean algorithm
