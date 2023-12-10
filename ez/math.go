@@ -30,3 +30,25 @@ func LCM(a, b int, integers ...int) int {
 
 	return result
 }
+
+// Shoelace and Point copied from https://rosettacode.org/wiki/Shoelace_formula_for_polygonal_area#Go
+
+// Point represents an x and y coordinate for a point along a polynomial
+type Point struct{ X, Y float64 }
+
+// Shoelace calculates the area of a polynomial given a set of points
+func Shoelace(pts []Point) float64 {
+	sum := 0.
+	p0 := pts[len(pts)-1]
+	for _, p1 := range pts {
+		sum += p0.Y*p1.X - p0.X*p1.Y
+		p0 = p1
+	}
+	return sum / 2
+}
+
+// Picks is a modified version of the Picks theorem formula to calculate the inner points
+// https://en.wikipedia.org/wiki/Pick%27s_theorem
+func Picks(area float64, pointCount int) float64 {
+	return area + float64(1) - float64(pointCount/2)
+}
