@@ -9,6 +9,7 @@ require golang.org/x/exp v0.0.0-20231206192017-f3f8817b8deb
 require (
 	github.com/JohannesKaufmann/html-to-markdown v1.4.2 // indirect
 	github.com/PuerkitoBio/goquery v1.8.1 // indirect
+	github.com/RyanCarrier/dijkstra v1.3.0
 	github.com/andybalholm/cascadia v1.3.2 // indirect
 	github.com/emirpasic/gods v1.18.1
 	github.com/fsnotify/fsnotify v1.7.0 // indirect
